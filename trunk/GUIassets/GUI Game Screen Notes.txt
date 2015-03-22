@@ -1,0 +1,7 @@
+Values for certain objects for our GUI Game screen
+
+
+
+Minimap_origin = (51,56)
+minimap_Height = 185
+Minimap_Width = 186

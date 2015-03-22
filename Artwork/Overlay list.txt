@@ -1,0 +1,34 @@
+Tree 1
+Tree 2
+Tree 3
+house 1
+House 2
+House 3
+House 4
+Portal 1
+Portal 2
+Portal 3
+Portal 4
+Portal 5
+Portal 6
+Bush 1
+Flowers 1
+Stone 1
+Stone 2
+Stone 3
+Stone 4
+Vertical Fence
+Horizontal Fence
+Ruins
+torches
+hut
+Skull 1
+Skull 2
+Boat
+Pirate Ship
+Cave entrance
+Cactus
+Mine entrance
+Minecart
+Support beams
+Web

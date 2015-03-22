@@ -1,0 +1,145 @@
+	def move(self, dtime, cameraPos): # IN PROCESS OF CHANGING TO VECTOR-BASED MOVEMENT
+		""" Uses velocity and magnitude to move player/enemy """
+		if self.p_state == 0:
+			self.p_cur_frame = 0
+			self.p_cur_delay = self.P_DELAY_FRAME
+
+		self.pos[0] += (self.vel[0] * self.vel_mag * dtime)
+		self.pos[1] += (self.vel[1] * self.vel_mag * dtime)
+
+
+
+class enemyClass(object):
+	def __init__(self, pos, health):
+		self.x = pos[0]
+		self.y = pos[1]
+		self.z = 2
+		self.vel = 100/1000
+		self.vx = 0
+		self.vy = 0
+		self.angle = 0
+		self.health = health
+		self.dead = False
+		self.bullets = []
+		self.ROF = 1000
+		self.shotTimer = 0
+		self.distFromPlayer = 3000
+		self.allowedToFire = True
+		self.aiming = False
+		self.attackTimer = 2000
+		self.moveTimer = 1500
+		self.dir = 0
+		self.walkdir = random.randint(1, 11)
+
+		randomDir = random.randint(0,1)
+		randomDir = math.radians(randomDir)
+		self.vx = math.asin(randomDir)
+		self.vy = math.acos(randomDir)
+
+	def draw(self, surface, dtime, barriers, cameraPos):
+		tmppos = [(self.x) - cameraPos[0], (self.y) - cameraPos[1]]
+		if self.dead == False:
+			pygame.draw.circle(surface, (255,0,0), (int(tmppos[0]), int(tmppos[1])), 15)
+		if self.dead == True:
+			pygame.draw.circle(surface, (0,0,255), (int(tmppos[0]), int(tmppos[1])), 15)
+		for i in self.bullets:
+			i.update(dtime)
+			i.render(surface)
+			if i.remove == True:
+				self.bullets.remove(i)
+
+	def checkIfHit(self, cameraPos, bullets = []):
+		newBullets = bullets
+		for i in newBullets:
+			dist = math.sqrt(((i.x - cameraPos[0]) - self.x)**2 + ((i.y - cameraPos[1]) - self.y)**2)
+			print(dist)
+			if dist <= 15:
+				self.health -= i.damage
+				newBullets.remove(i)
+
+		#checks for enemy death
+		if self.health <=0:
+			self.dead = True
+
+		return newBullets
+
+	def move(self, playerX, playerY, dtime):
+		tempX = self.x - playerX
+		tempY = self.y - playerY
+		dist = math.sqrt(tempX**2 + tempY**2)
+
+		if dist < 500 and dist >= 40:
+			if tempX != 0 and tempY != 0:
+				self.angle = -math.atan2(tempY,tempX)
+			self.vx = self.vel * math.cos(-self.angle) * dtime
+			self.vy = self.vel * math.sin(-self.angle) * dtime
+			self.x -= self.vx
+			self.y -= self.vy
+			self.aiming = False
+
+		elif dist < 40:
+			self.aiming = True
+			self.shoot(dtime)
+
+		else:
+			if self.moveTimer > 0:
+				self.moveTimer -= dtime
+			if self.moveTimer <= 0:
+				# Changes direction and timer to different values
+				# If walkdir generates same number twice in a row, reroll
+				tmpcheck = self.walkdir
+				self.walkdir = random.randint(1, 8)
+				if tmpcheck == self.walkdir:
+					self.walkdir = random.randint(1, 8)
+				# Resets timer for walk direction
+				self.moveTimer = random.randint(1500, 2500) # enemy walks for x ms
+
+			# if random direction # exceeds 8, enemy stops for durtimer sec
+			if self.walkdir > 8:
+				self.vel = 0
+
+			# Moves the enemy (WILL USE UPDATE METHOD WHEN ENEMIES HAVE SPRITES)
+			self.EnemyMove()
+			m = math3d.Vector2FromPolar(math.degrees(self.dir), self.vel)
+			self.x += m[0]
+			self.y += m[1]
+
+		return [self.x, self.y]
+
+
+
+	def shoot(self, dtime):
+		if self.allowedToFire:
+			fireDir = (self.angle + math.pi)
+			if not self.aiming:
+				firDir += math.radians(random.randint(-20,20))
+			aBullet = NewBullet.bullet(self.x, self.y, fireDir, 10)
+			self.bullets.append(aBullet)
+			self.shotTimer = 0
+			self.allowedToFire = False
+		else:
+			self.shotTimer += dtime
+			if self.shotTimer>= self.ROF:
+				self.allowedToFire = True
+
+	def EnemyMove(self):
+		""" Creates a directional vector for character movement """
+		# Takes the direction and converts it to an angle in radians
+		# 8 Cardinal Directions, starting at 1 for North and going clockwise
+		if self.walkdir == 1:
+			self.dir = math.pi / 2
+		if self.walkdir == 2:
+			self.dir = math.pi / 4
+		if self.walkdir == 3:
+			self.dir = 0
+		if self.walkdir == 4:
+			self.dir = 7 * math.pi / 4
+		if self.walkdir == 5:
+			self.dir = 3 * math.pi / 2
+		if self.walkdir == 6:
+			self.dir = 5 * math.pi / 4
+		if self.walkdir == 7:
+			self.dir = math.pi
+		if self.walkdir == 8:
+			self.dir = 3 * math.pi / 4
+		self.dir = -self.dir

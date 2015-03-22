@@ -1,0 +1,15 @@
+If you're moving a sprite around the screen, add it to a pygame.sprite.RenderUpdates 
+group, use the Group.draw function to draw the sprite, and when you need to move it,
+use the Group.clear function to draw a background over the sprite.  So, briefly, the
+steps involved are this:
+1.) Blit your background onto a surface
+2.) Make your sprite
+3.) Add your sprite to a RenderUpdates sprite group
+4.) Use Group.draw to draw your sprite to your active surface
+5.) When updating, use Group.clear with your active surface as the target, and
+the previously made background surface as your background.
+6.) Update your sprite location information
+7.) Use Group.draw to redraw the sprite at the new location on your active surface.
+
+The final result will be that you only update the portion of your screen that needs
+to be updated, often resulting in greatly increased performance.

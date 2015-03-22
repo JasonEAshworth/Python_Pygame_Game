@@ -1,0 +1,318 @@
+#new master .con file
+[a00]
+tile = 0,0
+[a01]
+tile = 1,0
+[a02]
+tile = 2,0
+[a03]
+tile = 3,0
+[a04]
+tile = 4,0
+[a05]
+tile = 5,0
+[a06]
+tile = 6,0
+[a07]
+tile = 7,0
+[a08]
+tile = 8,0
+[a09]
+tile = 9,0
+[a10]
+tile = 10,0
+[a11]
+tile = 11,0
+[a12]
+tile = 12,0
+[a13]
+tile = 0,1
+[a14]
+tile = 1,1
+[a15]
+tile = 2,1
+[a16]
+tile = 3,1
+[a17]
+tile = 4,1
+[a18]
+tile = 5,1
+[a19]
+tile = 6,1
+[a20]
+tile = 7,1
+[a21]
+tile = 8,1
+[a22]
+tile = 9,1
+[a23]
+tile = 10,1
+[a24]
+tile = 11,1
+[a25]
+tile = 12,1
+[a26]
+tile = 0,2
+[a27]
+tile = 1,2
+[a28]
+tile = 2,2
+[a29]
+tile = 3,2
+[a30]
+tile = 4,2
+[a31]
+tile = 5,2
+[a32]
+tile = 6,2
+[a33]
+tile = 7,2
+[a34]
+tile = 8,2
+[a35]
+tile = 9,2
+[a36]
+tile = 10,2
+[a37]
+tile = 11,2
+[a38]
+tile = 12,2
+[a39]
+tile = 0,3
+[a40]
+tile = 1,3
+[a41]
+tile = 2,3
+[a42]
+tile = 3,3
+[a43]
+tile = 4,3
+[a44]
+tile = 5,3
+[a45]
+tile = 6,3
+[a46]
+tile = 7,3
+[a47]
+tile = 8,3
+[a48]
+tile = 9,3
+[a49]
+tile = 10,3
+[a50]
+tile = 11,3
+[a51]
+tile = 12,3
+[a52]
+tile = 0,4
+[a53]
+tile = 1,4
+[a54]
+tile = 2,4
+[a55]
+tile = 3,4
+[a56]
+tile = 4,4
+[a57]
+tile = 5,4
+[a58]
+tile = 6,4
+[a59]
+tile = 7,4
+[a60]
+tile = 8,4
+[a61]
+tile = 9,4
+[a62]
+tile = 10,4
+[a63]
+tile = 11,4
+[a64]
+tile = 12,4
+[a65]
+tile = 0,5
+[a66]
+tile = 1,5
+[a67]
+tile = 2,5
+[a68]
+tile = 3,5
+[a69]
+tile = 4,5
+[a70]
+tile = 5,5
+[a71]
+tile = 6,5
+[a72]
+tile = 7,5
+[a73]
+tile = 8,5
+[a74]
+tile = 9,5
+[a75]
+tile = 10,5
+[a76]
+tile = 11,5
+[a77]
+tile = 12,5
+[a78]
+tile = 0,6
+[a79]
+tile = 1,6
+[a80]
+tile = 2,6
+[a81]
+tile = 3,6
+[a82]
+tile = 4,6
+[a83]
+tile = 5,6
+[a84]
+tile = 6,6
+[a85]
+tile = 7,6
+[a86]
+tile = 8,6
+[a87]
+tile = 9,6
+[a88]
+tile = 10,6
+[a89]
+tile = 11,6
+[a90]
+tile = 12,6
+[a91]
+tile = 0,7
+[a92]
+tile = 1,7
+[a93]
+tile = 2,7
+[a94]
+tile = 3,7
+[a95]
+tile = 4,7
+[a96]
+tile = 5,7
+[a97]
+tile = 6,7
+[a98]
+tile = 7,7
+[a99]
+tile = 8,7
+[b00]
+tile = 9,7
+[b01]
+tile = 10,7
+[b02]
+tile = 11,7
+[b03]
+tile = 12,7
+[b04]
+tile = 0,8
+[b05]
+tile = 1,8
+[b06]
+tile = 2,8
+[b07]
+tile = 3,8
+[b08]
+tile = 4,8
+[b09]
+tile = 5,8
+[b10]
+tile = 6,8
+[b11]
+tile = 7,8
+[b12]
+tile = 8,8
+[b13]
+tile = 9,8
+[b14]
+tile = 10,8
+[b15]
+tile = 11,8
+[b16]
+tile = 12,8
+[b17]
+tile = 0,9
+[b18]
+tile = 1,9
+[b19]
+tile = 2,9
+[b20]
+tile = 3,9
+[b21]
+tile = 4,9
+[b22]
+tile = 5,9
+[b23]
+tile = 6,9
+[b24]
+tile = 7,9
+[b25]
+tile = 8,9
+[b26]
+tile = 9,9
+[b27]
+tile = 10,9
+[b28]
+tile = 11,9
+[b29]
+tile = 12,9
+[b30]
+tile = 0,10
+[b31]
+tile = 1,10
+[b32]
+tile = 2,10
+[b33]
+tile = 3,10
+[b34]
+tile = 4,10
+[b35]
+tile = 5,10
+[b36]
+tile = 6,10
+[b37]
+tile = 7,10
+[b38]
+tile = 8,10
+[b39]
+tile = 9,10
+[b40]
+tile = 10,10
+[b41]
+tile = 11,10
+[b42]
+tile = 12,10
+
+
+
+#new line
+[b43]
+tile = 0,11
+[b44]
+tile = 1,11
+[b45]
+tile = 2,11
+[b46]
+tile = 3,11
+[b47]
+tile = 4,11
+[b48]
+tile = 5,11
+[b49]
+tile = 6,11
+[b50]
+tile = 7,11
+[b51]
+tile = 8,11
+[b52]
+tile = 9,11
+[b53]
+tile = 10,11
+[b54]
+tile = 11,11
+[b55]
+tile = 12,11
+

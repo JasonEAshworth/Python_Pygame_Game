@@ -1,0 +1,8 @@
+overlay =o00:5:5
+        o00:20:10
+        o01:20:20
+        o00:20:90
+        o01:20:50
+
+
+oxx = overlay code defined in overlay.con ":" x position in TILE COOORDS ":" y position in TILE COORDS
